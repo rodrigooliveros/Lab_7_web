@@ -12,15 +12,42 @@
       
       <div class="blog-post">
         <h2 class="blog-post-title">Sample blog post</h2>
-        <p class="blog-post-meta">November 1, 2014 by <a href="#">Mark</a>     </p>
-        <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
-        <a class = "btn btn-danger" href =""> Delete </a>
-        <a class = "btn btn-info" href =""> Edit </a>
+        <p class="blog-post-meta">Febrero 02, 2023 by <a href="#">Rodrigo</a>     </p>
+        <p>Este espacio te permite crear blogs y publicarlos, ademas de poder editar su contenido mas tarde o eliminarlo.</p>
       </div>
 
 
 
     </div>
+  </div>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Date</th>
+          <th>Post</th>
+          <th>Operations</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (let i = 0; i <posts.length; i++) { %>
+        <tr>
+          <td><%= i + 1 %></td>
+          <td>><strong><%= posts[i].title %></strong></td>
+          <td><%= posts[i].author %></td>
+          <td><%= posts[i].post_date %></td>
+          <td><%= posts[i].post_data %></td>
+          <td>
+            <a href="/delete/<%= posts[i]._id %>" class="btn btn-danger">Delete</a>
+            <a href="/edit/<%= posts[i]._id %>" class="btn btn-info">Edit</a>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
   </div>
 </main>
 
